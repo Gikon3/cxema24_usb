@@ -1,6 +1,5 @@
 from com_port import ComPort
 from parser_data import *
-import time
 
 MODE = "GPS"
 COM_PORT = "COM9"
