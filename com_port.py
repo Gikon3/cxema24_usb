@@ -29,7 +29,7 @@ class ComPort:
 
     def read(self):
         line = ""
-        while line[-1:] != '\0':
+        while line[-1:] != '\n':
             byte = self.port.read(1)
             line += byte.decode('utf-8')
         return line[:-1]

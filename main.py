@@ -2,7 +2,7 @@ from com_port import ComPort
 from parser_data import *
 
 MODE = "GPS"
-COM_PORT = "COM9"
+COM_PORT = "COM17"
 
 param_gps = {
     "mode": "GPS",
@@ -23,7 +23,7 @@ ser_port.flush_input_buffer()
 
 param_dict = param_gps if MODE == 'GPS' else param_glo
 for value in param_dict.values():
-    ser_port.write(str(value) + "\0")
+    ser_port.write(str(value) + "\n")
 
 data_frame = ser_port.read()
 prs_data = ParserData()
